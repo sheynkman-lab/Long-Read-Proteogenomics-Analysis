@@ -1,0 +1,10 @@
+biopython
+gtfparse
+matplotlib
+seaborn
+pandas
+numpy
+scipy
+matplotlib_venn
+upsetplot
+openpyxl
