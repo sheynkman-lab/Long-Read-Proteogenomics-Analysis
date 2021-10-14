@@ -5,9 +5,9 @@ from Bio import SeqIO
 import config
 import re
 
-sample_name = 'jurkat'
+
 gene_isoname_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/reference_tables/gene_isoname.tsv'
-pb_gene_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/protein_classification/{sample_name}_genes.tsv'
+pb_gene_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/protein_classification/{config.EXPERIMENT_NAME}_genes.tsv'
 uniprot_fasta_file = f'{config.REFERENCE_DIRECTORY}/uniprot_reviewed_canonical_and_isoform.fasta'
 # PSM file locations
 gencode_psm_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/gencode/search_results/Task1SearchTask/AllPSMs.psmtsv'
@@ -17,15 +17,15 @@ pacbio_hybrid_psm_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacb
 # Peptide file locations
 gencode_peptide_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/gencode/search_results/Task1SearchTask/AllPeptides.Gencode.psmtsv'
 uniprot_peptide_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/uniprot/search_results/Task1SearchTask/AllPeptides.UniProt.psmtsv'
-pacbio_filtered_peptide_file = f'{config.PIPELINE_RESULTS_DIRECTORY}//metamorpheus/pacbio/filtered/search_results/Task1SearchTask/AllPeptides.{sample_name}.filtered.psmtsv'
-pacbio_hybrid_peptide_file = f'{config.PIPELINE_RESULTS_DIRECTORY}//metamorpheus/pacbio/hybrid/search_results/Task1SearchTask/AllPeptides.{sample_name}.hybrid.psmtsv'
+pacbio_filtered_peptide_file = f'{config.PIPELINE_RESULTS_DIRECTORY}//metamorpheus/pacbio/filtered/search_results/Task1SearchTask/AllPeptides.{config.EXPERIMENT_NAME}.filtered.psmtsv'
+pacbio_hybrid_peptide_file = f'{config.PIPELINE_RESULTS_DIRECTORY}//metamorpheus/pacbio/hybrid/search_results/Task1SearchTask/AllPeptides.{config.EXPERIMENT_NAME}.hybrid.psmtsv'
 # Protein group file locations
 gencode_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/gencode/search_results/Task1SearchTask/AllQuantifiedProteinGroups.Gencode.tsv'
 uniprot_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/uniprot/search_results/Task1SearchTask/AllQuantifiedProteinGroups.UniProt.tsv'
-pacbio_filtered_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/filtered/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{sample_name}.filtered.tsv'
-pacbio_hybrid_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/hybrid/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{sample_name}.hybrid.tsv'
-pacbio_rescue_resolve_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/rescue_resolve/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{sample_name}.rescue_resolve.tsv'
-high_confidence_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/hybrid_protein_database/{sample_name}_refined_high_confidence.tsv'
+pacbio_filtered_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/filtered/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{config.EXPERIMENT_NAME}.filtered.tsv'
+pacbio_hybrid_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/hybrid/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{config.EXPERIMENT_NAME}.hybrid.tsv'
+pacbio_rescue_resolve_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/rescue_resolve/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{config.EXPERIMENT_NAME}.rescue_resolve.tsv'
+high_confidence_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/hybrid_protein_database/{config.EXPERIMENT_NAME}_refined_high_confidence.tsv'
 high_confidence_genes_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/hybrid_protein_database/jurkat_high_confidence_genes.tsv'
 
 

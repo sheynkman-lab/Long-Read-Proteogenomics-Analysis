@@ -45,4 +45,5 @@ font = {'family' : 'sans-serif',
 PIPELINE_RESULTS_DIRECTORY='/Users/bj8th/Documents/Sheynkman-Lab/Data/JURKAT_06-06-2021'
 # PIPELINE_RESULTS_DIRECTORY='/Users/gloriasheynkman/Documents/research_drive/projects/long_read_proteogenomics/LRPG-Manuscript/data/results/jurkat'
 REFERENCE_DIRECTORY='/Users/bj8th/Documents/Sheynkman-Lab/Data/Reference'
+EXPERIMENT_NAME='jurkat'
 # REFERENCE_DIRECTORY='/Users/gloriasheynkman/Documents/research_drive/projects/long_read_proteogenomics/LRPG-Manuscript/data/input'
