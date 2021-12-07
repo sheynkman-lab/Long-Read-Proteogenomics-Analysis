@@ -26,7 +26,7 @@ pacbio_filtered_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metam
 pacbio_hybrid_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/hybrid/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{config.EXPERIMENT_NAME}.hybrid.tsv'
 pacbio_rescue_resolve_protein_group_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/metamorpheus/pacbio/rescue_resolve/search_results/Task1SearchTask/AllQuantifiedProteinGroups.{config.EXPERIMENT_NAME}.rescue_resolve.tsv'
 high_confidence_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/hybrid_protein_database/{config.EXPERIMENT_NAME}_refined_high_confidence.tsv'
-high_confidence_genes_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/hybrid_protein_database/jurkat_high_confidence_genes.tsv'
+high_confidence_genes_file = f'{config.PIPELINE_RESULTS_DIRECTORY}/hybrid_protein_database/{config.EXPERIMENT_NAME}_high_confidence_genes.tsv'
 
 
 # list of genes in the high confidence space, for filtering of input data
@@ -126,7 +126,7 @@ class Peptide:
         self.uniprot_peptide = read_peptide_file(uniprot_peptide_file, uniprot_gene_map)
         self.uniprot_peptide['is_high_confidence'] = self.uniprot_peptide['genes'].apply(lambda genes: is_high_confidence(genes, genes_in_hiconf_space))
         # self.uniprot_peptide_set = set(self.uniprot_peptide['Base Sequence'].unique())
-        # pacbio_filtered_peptide = read_peptide_file(pacbio_filtered_peptide_file)
+        self.pacbio_filtered_peptide = read_peptide_file(pacbio_filtered_peptide_file, pacbio_gene_map)
         self.pacbio_hybrid_peptide = read_peptide_file(pacbio_hybrid_peptide_file, hybrid_gene_map)
         self.pacbio_hybrid_peptide['is_high_confidence'] = self.pacbio_hybrid_peptide['accs'].apply(lambda accs: is_high_confidence(accs, accs_in_hiconf_space))
         # self.pacbio_hybrid_peptide_set = set(self.pacbio_hybrid_peptide['Base Sequence'].unique())
